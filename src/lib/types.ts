@@ -1,4 +1,4 @@
-// Shared domain types for RateIt.
+// Shared domain types for rabrate.
 
 export type Category = 'Meme' | 'Opinion' | 'Product' | 'Idea' | 'Question' | 'Other'
 

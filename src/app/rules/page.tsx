@@ -1,6 +1,6 @@
 import Link from 'next/link'
 
-export const metadata = { title: 'Rules — Rate It' }
+export const metadata = { title: 'Rules — rabrate' }
 
 const RULES = [
   {
@@ -34,7 +34,7 @@ export default function RulesPage() {
     <div className="mx-auto w-full max-w-2xl px-4 py-8 md:px-6">
       <h1 className="text-2xl font-bold tracking-tight">Community rules</h1>
       <p className="mt-1 text-sm text-muted">
-        Rate It works because people rate honestly. These are the few things that keep it that way.
+        rabrate works because people rate honestly. These are the few things that keep it that way.
       </p>
 
       <ol className="mt-6 flex flex-col gap-4">

@@ -94,7 +94,7 @@ export function Sidebar({
 
       {wide && (
         <p className="mt-auto px-3 pt-6 text-[11px] leading-relaxed text-muted/70">
-          Rate It — your opinion, scored −5 to +10.
+          rabrate — your opinion, scored −5 to +10.
         </p>
       )}
     </>

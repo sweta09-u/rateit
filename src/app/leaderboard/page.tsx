@@ -1,6 +1,6 @@
 import { FeedSection } from '@/components/FeedSection'
 
-export const metadata = { title: 'Leaderboard — Rate It' }
+export const metadata = { title: 'Leaderboard — rabrate' }
 
 export default function LeaderboardPage() {
   return (

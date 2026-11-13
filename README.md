@@ -1,4 +1,4 @@
-# Rate It
+# rabrate
 
 Post anything. Rate everything. A community where every post is rated **−5 to +10**.
 

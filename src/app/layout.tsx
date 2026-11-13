@@ -15,10 +15,10 @@ export const metadata: Metadata = {
   metadataBase: new URL(
     process.env.NEXT_PUBLIC_SITE_URL || 'https://rateit0.netlify.app',
   ),
-  title: 'Rate It — Post anything. Rate everything.',
+  title: 'rabrate — Post anything. Rate everything.',
   description:
-    'Rate It — post anything, rate everything. A community where every post is rated from −5 to +10.',
-  applicationName: 'Rate It',
+    'rabrate — post anything, rate everything. A community where every post is rated from −5 to +10.',
+  applicationName: 'rabrate',
   icons: {
     icon: [
       { url: '/brand/favicon.svg', type: 'image/svg+xml' },
@@ -28,7 +28,7 @@ export const metadata: Metadata = {
   },
   manifest: '/manifest.webmanifest',
   openGraph: {
-    title: 'Rate It — Post anything. Rate everything.',
+    title: 'rabrate — Post anything. Rate everything.',
     description: 'A community where every post is rated from −5 to +10.',
     images: ['/brand/social-card.png'],
     type: 'website',

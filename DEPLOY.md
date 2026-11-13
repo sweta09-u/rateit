@@ -1,4 +1,4 @@
-# Deploying Rate It
+# Deploying rabrate
 
 One app, Next.js. Supabase provides auth, the database and image storage.
 

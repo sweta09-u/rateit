@@ -21,7 +21,7 @@ export const isConfigured = missingConfig.length === 0
 if (!isConfigured) {
   // eslint-disable-next-line no-console
   console.warn(
-    `[RateIt] Supabase is not configured. Missing: ${missingConfig.join(', ')}. ` +
+    `[rabrate] Supabase is not configured. Missing: ${missingConfig.join(', ')}. ` +
       'Set them in the host environment (or .env.local) and rebuild.',
   )
 }

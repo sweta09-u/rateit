@@ -78,11 +78,11 @@ export function TopBar({
         <PanelLeft size={20} />
       </button>
 
-      <Link href="/" className="flex shrink-0 items-center gap-2" aria-label="Rate It — home">
+      <Link href="/" className="flex shrink-0 items-center gap-2" aria-label="rabrate — home">
         {/* eslint-disable-next-line @next/next/no-img-element */}
         <img src="/brand/mark.svg" alt="" width={30} height={30} className="rounded-lg" />
-        <span className="hidden text-[17px] font-bold tracking-tight sm:block">
-          Rate<span className="text-brand">It</span>
+        <span className="hidden text-[18px] font-extrabold tracking-tight text-fg sm:block">
+          rabrate
         </span>
       </Link>
 

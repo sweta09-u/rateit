@@ -13,9 +13,7 @@ export function SetupNotice() {
       <div className="flex items-center gap-2">
         {/* eslint-disable-next-line @next/next/no-img-element */}
         <img src="/brand/mark.svg" alt="" width={34} height={34} className="rounded-lg" />
-        <span className="text-lg font-bold tracking-tight">
-          Rate<span className="text-brand">It</span>
-        </span>
+        <span className="text-lg font-extrabold tracking-tight text-fg">rabrate</span>
       </div>
 
       <h1 className="mt-6 text-2xl font-bold tracking-tight">Connect Supabase to finish setup</h1>

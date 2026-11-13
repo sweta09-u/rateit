@@ -10,7 +10,7 @@ export default function HomePage() {
       </Suspense>
 
       <FeedSection
-        title="Trending on Rate It"
+        title="Trending on rabrate"
         subtitle="Busiest posts right now, weighted by recency."
         sort="trending"
         limit={6}

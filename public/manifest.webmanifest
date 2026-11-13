@@ -1,12 +1,12 @@
 {
-  "name": "RateIt",
-  "short_name": "RateIt",
-  "description": "Post anything. Rate everything.",
+  "name": "rabrate",
+  "short_name": "rabrate",
+  "description": "Post anything. Rate everything. Every post scored \u22125 to +10 by the community.",
   "start_url": "/",
   "scope": "/",
   "display": "standalone",
-  "background_color": "#FFFFFF",
-  "theme_color": "#2563EB",
+  "background_color": "#0F0F0F",
+  "theme_color": "#FF8500",
   "icons": [
     {
       "src": "/brand/icon-192.png",

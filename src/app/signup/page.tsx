@@ -75,7 +75,7 @@ export default function SignupPage() {
 
   return (
     <div className="mx-auto w-full max-w-sm px-4 py-12">
-      <h1 className="text-2xl font-bold tracking-tight">Join Rate It</h1>
+      <h1 className="text-2xl font-bold tracking-tight">Join rabrate</h1>
       <p className="mt-1 text-sm text-muted">Post anything. Rate everything.</p>
 
       <form onSubmit={submit} className="mt-6 flex flex-col gap-4" noValidate>
