@@ -1,0 +1,111 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ---------------------------------------------------------------------------
+   Semantic tokens. Components reference these, never a raw hex, so the whole
+   interface flips between the dark and light variants of the orange system.
+   --------------------------------------------------------------------------- */
+
+:root,
+[data-theme='dark'] {
+  --bg: #0f0f0f;
+  --surface: #1b1b1b;
+  --surface-2: #252525;
+  --line: #333333;
+  --fg: #ffffff;
+  --muted: #aaaaaa;
+
+  --brand: #ff8500;
+  --brand-hover: #e87500;
+  --brand-soft: rgba(255, 133, 0, 0.14);
+  /* Dark ink on orange: white-on-orange is only 2.4:1, which fails WCAG AA. */
+  --brand-fg: #0f0f0f;
+  --accent: #ffb347;
+  --neg: #f04438;
+
+  color-scheme: dark;
+}
+
+[data-theme='light'] {
+  --bg: #ffffff;
+  --surface: #f6f6f7;
+  --surface-2: #ededef;
+  --line: #e3e3e6;
+  --fg: #0f0f0f;
+  --muted: #5c5c63;
+
+  --brand: #e87500;
+  --brand-hover: #c85f00;
+  --brand-soft: rgba(232, 117, 0, 0.12);
+  --brand-fg: #0f0f0f;
+  --accent: #ff8500;
+  --neg: #c81e1e;
+
+  color-scheme: light;
+}
+
+@layer base {
+  * {
+    border-color: var(--line);
+  }
+
+  html {
+    -webkit-text-size-adjust: 100%;
+  }
+
+  body {
+    background-color: var(--bg);
+    color: var(--fg);
+    font-family: var(--font-sans), ui-sans-serif, system-ui, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+
+  /* A single, consistent focus treatment everywhere. */
+  :focus-visible {
+    outline: 2px solid var(--brand);
+    outline-offset: 2px;
+    border-radius: 4px;
+  }
+
+  ::selection {
+    background: var(--brand);
+    color: var(--brand-fg);
+  }
+}
+
+@layer utilities {
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
+  /* Clamp text without shipping a plugin. */
+  .line-2 {
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+  .line-3 {
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}
