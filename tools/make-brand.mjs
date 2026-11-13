@@ -14,12 +14,45 @@
  */
 import fs from 'node:fs'
 import path from 'node:path'
+import { fileURLToPath } from 'node:url'
 import { execFileSync } from 'node:child_process'
 
-const ROOT = path.resolve(import.meta.dirname, '..')
+const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..')
 const OUT = path.join(ROOT, 'public', 'brand')
-const CHROME = process.env.CHROME_PATH || '/usr/local/bin/chromium'
 const TMP = path.join(ROOT, '.brand-tmp')
+
+/**
+ * Any Chromium-based browser can render these — Chrome, Edge or Chromium.
+ * Edge ships with Windows, so this works there with no extra install.
+ */
+function findBrowser() {
+  if (process.env.CHROME_PATH) return process.env.CHROME_PATH
+  const candidates = [
+    '/usr/local/bin/chromium',
+    '/usr/bin/chromium',
+    '/usr/bin/chromium-browser',
+    '/usr/bin/google-chrome',
+    '/Applications/Google Chrome.app/Contents/MacOS/Google Chrome',
+    '/Applications/Microsoft Edge.app/Contents/MacOS/Microsoft Edge',
+    'C:\\Program Files (x86)\\Microsoft\\Edge\\Application\\msedge.exe',
+    'C:\\Program Files\\Microsoft\\Edge\\Application\\msedge.exe',
+    'C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe',
+    'C:\\Program Files (x86)\\Google\\Chrome\\Application\\chrome.exe',
+  ]
+  const found = candidates.find((p) => { try { return fs.existsSync(p) } catch { return false } })
+  if (!found) {
+    console.error(
+      '\nNo Chromium-based browser found.\n' +
+        'Set CHROME_PATH to chrome.exe or msedge.exe, for example:\n' +
+        '  PowerShell:  $env:CHROME_PATH="C:\\Program Files (x86)\\Microsoft\\Edge\\Application\\msedge.exe"; node tools/make-brand.mjs\n',
+    )
+    process.exit(1)
+  }
+  return found
+}
+
+const CHROME = findBrowser()
+console.log(`  using ${CHROME}`)
 
 const ORANGE_LIGHT = '#FFA23A'
 const ORANGE_DARK = '#FF7A00'

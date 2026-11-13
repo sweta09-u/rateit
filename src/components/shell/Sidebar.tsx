@@ -77,7 +77,7 @@ export function Sidebar({
 
   const body = (wide: boolean) => (
     <>
-      <nav aria-label="Primary" className="flex flex-col gap-1">
+      <nav aria-label="Sections" className="flex flex-col gap-1">
         {PRIMARY.map((entry) => item(entry, wide))}
       </nav>
 
